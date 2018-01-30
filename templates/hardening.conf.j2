@@ -8,8 +8,14 @@ client_header_timeout {{nginx_client_header_timeout}};
 send_timeout {{nginx_send_timeout}};
 limit_conn_zone {{nginx_limit_conn_zone}};
 limit_conn {{nginx_limit_conn}};
-ssl_ciphers {{nginx_ssl_ciphers}};
+ssl_protocols {{nginx_ssl_protocols}};
+ssl_prefer_server_ciphers {{nginx_ssl_prefer_server_ciphers}};
+ssl_ciphers '{{nginx_ssl_ciphers}}';
 ssl_dhparam {{nginx_dh_param}};
+ssl_session_tickets {{ ssl_session_tickets }};
 {% for header in nginx_add_header %}
 add_header {{header}};
+{% endfor %}
+{% for cookie_flag in nginx_cookie_flag %}
+set_cookie_flag {{ cookie_flag }};
 {% endfor %}
