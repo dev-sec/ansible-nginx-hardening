@@ -33,4 +33,3 @@ nginx_ssl_prefer_server_ciphers: "on"
 nginx_dh_param: "{{nginx_root_dir}}/dh{{nginx_dh_size}}.pem"
 nginx_dh_size: "2048"
 ssl_session_tickets: "off"
-nginx_http_methods: [ "GET", "HEAD", "POST" ]

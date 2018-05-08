@@ -25,10 +25,6 @@
   lineinfile: dest="/etc/nginx/nginx.conf" regexp="^\s*keepalive_timeout" line="keepalive_timeout {{nginx_keepalive_timeout}};" insertafter="http {"
   notify: reload nginx
 
-- name: Limit HTTP Method in main nginx.conf
-  blockinfile: dest="/etc/nginx/nginx.conf" block="    if ($request_method !~ ^({{ nginx_http_methods | join('|') }})$){\n        return 444;\n    }" insertafter="http {"
-  notify: reload nginx
-
 - name: remove default.conf
   file: path="{{nginx_default_conf}}" state=absent
   when: nginx_remove_default_site
