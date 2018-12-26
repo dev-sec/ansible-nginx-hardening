@@ -50,48 +50,48 @@ env:
   - distro: centos6
     version: latest
     init: /sbin/init
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: centos7
     init: /lib/systemd/systemd
     container_id: $(mktemp)
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
     version: latest
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: oracle6
     version: latest
     init: /sbin/init
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: ubuntu1404
     version: latest
     init: /sbin/init
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: ubuntu1604
     version: latest
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: ubuntu1804
     version: latest
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: debian8
     version: latest
     init: /sbin/init
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
   - distro: debian9
     version: latest
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role.yml
+    test_playbook: official-nginx-role-redhat.yml
 
 
 before_install:
