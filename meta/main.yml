@@ -17,8 +17,6 @@ galaxy_info:
     - name: Debian
       versions:
         - stretch
-    - name: Amazon
-    - name: Fedora
   galaxy_tags:
     - system
     - security
