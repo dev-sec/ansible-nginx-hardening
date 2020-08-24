@@ -5,7 +5,7 @@
     mode: "o-rw"
     owner: "root"
     group: "root"
-    recurse: yes
+    recurse: true
 
 - name: create additional configuration
   template:
@@ -33,10 +33,10 @@
 
 - name: change ssl_prefer_server_ciphers in main nginx.conf
   lineinfile:
-     dest: "/etc/nginx/nginx.conf"
-     regexp: '^\s*ssl_prefer_server_ciphers'
-     line: "    ssl_prefer_server_ciphers {{ nginx_ssl_prefer_server_ciphers }};"
-     insertafter: "http {"
+    dest: "/etc/nginx/nginx.conf"
+    regexp: '^\s*ssl_prefer_server_ciphers'
+    line: "    ssl_prefer_server_ciphers {{ nginx_ssl_prefer_server_ciphers }};"
+    insertafter: "http {"
   notify: restart nginx
 
 - name: change client_max_body_size in main nginx.conf
