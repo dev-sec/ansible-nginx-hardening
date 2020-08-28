@@ -54,41 +54,6 @@ env:
   #    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   #    test_playbook: test.yml
 
-  - distro: centos6
-    version: latest
-    init: /sbin/init
-    test_playbook: official-nginx-role-redhat.yml
-
-  - distro: centos7
-    init: /lib/systemd/systemd
-    container_id: $(mktemp)
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    version: latest
-    test_playbook: official-nginx-role-redhat.yml
-
-  - distro: oracle6
-    version: latest
-    init: /sbin/init
-    test_playbook: official-nginx-role-redhat.yml
-
-  - distro: ubuntu1604
-    version: latest
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role-debian.yml
-
-  - distro: ubuntu1804
-    version: latest
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role-debian.yml
-
-  - distro: debian9
-    version: latest
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    test_playbook: official-nginx-role-debian.yml
-
 before_install:
   # Pull container
   - 'docker pull rndmh3ro/docker-${distro}-ansible:${version}'
