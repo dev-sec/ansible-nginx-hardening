@@ -1,19 +1,10 @@
 # nginx-hardening (Ansible Role)
 
-[![Build Status](http://img.shields.io/travis/dev-sec/ansible-nginx-hardening.svg)][1]
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-nginx--hardening-660198.svg)][3]
 
-## Description
+**Attention:** This role has been migrated to our hardening-collection:
+* https://github.com/dev-sec/ansible-os-hardening/
+* https://galaxy.ansible.com/devsec/hardening
 
-This role provides secure nginx configuration. It is intended to be compliant with the [DevSec Nginx Baseline](https://github.com/dev-sec/nginx-baseline).
-
-It works with the following nginx-roles, including, but not limited to:
-* [geerlingguy.nginx](https://galaxy.ansible.com/geerlingguy/nginx/)
-* [nginxinc.nginx](https://galaxy.ansible.com/nginxinc/nginx)
-* [jdauphant.nginx](https://galaxy.ansible.com/jdauphant/nginx/)
-* [franklinkim.nginx](https://galaxy.ansible.com/franklinkim/nginx/)
-
-**NOTE: This role does not work with nginx 1.0.15 or older! Please use the latest version from the official nginx repositories!**
 
 ## Requirements
 
